@@ -1,4 +1,4 @@
 #RULES
 
 Each player is dealt 5 cards
-Each player plays one card at a time
+Each player plays one card at a time until all cards are played.
