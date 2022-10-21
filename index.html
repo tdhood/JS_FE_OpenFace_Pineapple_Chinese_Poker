@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+    <title>OpenFace Pineapple Poker</title>
+</head>
+
+<body>
+    <div id="game-container">
+        <h1>Open-Face Pineapple Chinese Poker</h1>
+        <button id="start">Start Game!</button>
+        <button id="show-rules">Rules</button>
+
+<!---------------------------------- rules popup -------------------------------------->
+        <div id="rules-menu">
+            <h3>How to Play:</h3>
+            <p>
+                Each player has to build 3 poker hands.
+            <ul>
+                <li>Hand 1 (top) uses 3 cards, must be the weakest hand.<br></li>
+                <li>Hand 2 (middle) uses 5 cards, and must be stronger than the top hand.<br></li>
+                <li>Hand 3 (bottom) uses 5 cards, and must be the strongest hand played.<br></li>
+            </ul>
+            If the hand strength does not increase in descending order, the player fouls.
+            </p>
+            <h3>Game Play:</h3>
+            There are a few approaches on how to play, so to try to keep things as fair as possible: <br><br>
+            Each player is dealt 5 cards. <br><br>
+            Taking turns, each plays places a card in 1 of their 3 hands. <br><br>
+            After all the cards are placed, taking turns, each player draws 3 cards, plays 2 and discards 1, until all hards are finished.
+
+            <h3>Scoring:</h3>
+            <p>meh.. doing this later</p>
+
+            <button id="hide-rules">Close</button>
+        </div>
+<!---------------------------  game are --------------------------------------------->
+
+        <div id="computer-decks">
+            <div id="computer-3">
+                <div class="card"></div>
+                <div class="card"></div>
+                <div class="card"></div>
+                <div class="card"></div>
+                <div class="card"></div>
+            </div>
+            <div id="computer-2">
+                <div class="card"></div>
+                <div class="card"></div>
+                <div class="card"></div>
+                <div class="card"></div>
+                <div class="card"></div>
+            </div>
+            <div id="computer-1">
+                <div class="card"></div>
+                <div class="card"></div>
+                <div class="card"></div>
+            </div>
+        </div>
+        <div id="player-decks">
+            <div id="player-1">
+                <div class="card"></div>
+                <div class="card"></div>
+                <div class="card"></div>
+            </div>
+            <div id="player-2">
+                <div class="card"></div>
+                <div class="card"></div>
+                <div class="card"></div>
+                <div class="card"></div>
+                <div class="card"></div>
+            </div>
+            <div id="player-3">
+                <div class="card"></div>
+                <div class="card"></div>
+                <div class="card"></div>
+                <div class="card"></div>
+                <div class="card"></div>
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <script src="https://unpkg.com/jquery"></script>
+    <script src="https://unpkg.com/axios/dist/axios.js"></script>
+    <script src="game.js"></script>
+    <script src="rules.js"></script>
+
+
+</body>
+
+</html>
