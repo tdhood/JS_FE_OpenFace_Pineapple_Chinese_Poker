@@ -1,0 +1,21 @@
+* {
+    background-color: green;
+}
+
+button {
+    background-color: antiquewhite;
+}
+#rules-menu {
+    width: 400px;
+    background-color: antiquewhite;
+    border: 1px solid black ;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    visibility: hidden;
+}
+
+#rules-menu h3,p,li,ul {
+    background-color: antiquewhite;
+}
