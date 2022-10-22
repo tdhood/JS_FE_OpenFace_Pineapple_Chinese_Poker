@@ -5,6 +5,11 @@
 button {
     background-color: antiquewhite;
 }
+
+#heading {
+    width: 50%;
+    margin: 0 auto;
+}
 #rules-menu {
     width: 400px;
     background-color: antiquewhite;
@@ -18,4 +23,38 @@ button {
 
 #rules-menu h3,p,li,ul {
     background-color: antiquewhite;
+}
+
+#game-container {
+    border: 1px solid black;
+}
+
+.card {
+    border: 1px solid black;
+    height: 8em;
+    width: 4em;
+}
+.card, .hand-label {
+    display: inline-block;
+    justify-content: center;
+}
+
+#player-decks, #action-cards{
+    display: inline-block;
+    justify-content: center;
+}
+
+.hands {
+    display: block;
+    padding: 4em;
+}
+
+#player-1, #computer-1 {
+    padding: 0 5em;
+}
+
+.communal-cards {
+    display: inline-block;
+    margin: auto;
+    padding: 0em 6em;
 }

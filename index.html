@@ -11,12 +11,14 @@
 </head>
 
 <body>
-    <div id="game-container">
-        <h1>Open-Face Pineapple Chinese Poker</h1>
-        <button id="start">Start Game!</button>
-        <button id="show-rules">Rules</button>
+    <div class="container">
+        <div id="heading">
+            <h1>Open-Face Pineapple Chinese Poker</h1>
+            <button id="start">Start Game!</button>
+            <button id="show-rules">Rules</button>
+        </div>
 
-<!---------------------------------- rules popup -------------------------------------->
+        <!---------------------------------- rules popup -------------------------------------->
         <div id="rules-menu">
             <h3>How to Play:</h3>
             <p>
@@ -32,55 +34,85 @@
             There are a few approaches on how to play, so to try to keep things as fair as possible: <br><br>
             Each player is dealt 5 cards. <br><br>
             Taking turns, each plays places a card in 1 of their 3 hands. <br><br>
-            After all the cards are placed, taking turns, each player draws 3 cards, plays 2 and discards 1, until all hards are finished.
+            After all the cards are placed, taking turns, each player draws 3 cards, plays 2 and discards 1, until all
+            hards are finished.
 
             <h3>Scoring:</h3>
             <p>meh.. doing this later</p>
 
             <button id="hide-rules">Close</button>
         </div>
-<!---------------------------  game are --------------------------------------------->
+        <!---------------------------  game are --------------------------------------------->
+        <div id="game-container">
+            <div id="computer-decks" class="hands">
+                <h2>Computer</h2>
+                <div id="computer-3">
 
-        <div id="computer-decks">
-            <div id="computer-3">
-                <div class="card"></div>
-                <div class="card"></div>
-                <div class="card"></div>
-                <div class="card"></div>
-                <div class="card"></div>
+                    <div class="card"></div>
+                    <div class="card"></div>
+                    <div class="card"></div>
+                    <div class="card"></div>
+                    <div class="card"></div>
+                    <div class="hand-label">Bottom</div>
+
+                </div>
+                <div id="computer-2">
+                    <div class="card"></div>
+                    <div class="card"></div>
+                    <div class="card"></div>
+                    <div class="card"></div>
+                    <div class="card"></div>
+                    <div class="hand-label">Middle</div>
+                </div>
+                <div id="computer-1">
+                    <div class="card"></div>
+                    <div class="card"></div>
+                    <div class="card"></div>
+                    <div class="hand-label">Top</div>
+                </div>
             </div>
-            <div id="computer-2">
-                <div class="card"></div>
-                <div class="card"></div>
-                <div class="card"></div>
-                <div class="card"></div>
-                <div class="card"></div>
+            <div>
+                <div id="draw-pile" class="communal-cards">
+                    <div class="card"></div>
+                    <div class="hand-label">Draw</div>
+                </div>
+                <div id="discard-pile" class="communal-cards">
+                    <div class="card"></div>
+                    <div class="hand-label">Discard</div>
+                </div>
             </div>
-            <div id="computer-1">
-                <div class="card"></div>
-                <div class="card"></div>
-                <div class="card"></div>
+            <div id="player-decks" class="hands">
+                <h2>Player</h2>
+                <div id="player-1">
+                    <div class="card"></div>
+                    <div class="card"></div>
+                    <div class="card"></div>
+                    <div class="hand-label">Top</div>
+                </div>
+                <div id="player-2">
+                    <div class="card"></div>
+                    <div class="card"></div>
+                    <div class="card"></div>
+                    <div class="card"></div>
+                    <div class="card"></div>
+                    <div class="hand-label">Middle</div>
+                </div>
+                <div id="player-3">
+                    <div class="card"></div>
+                    <div class="card"></div>
+                    <div class="card"></div>
+                    <div class="card"></div>
+                    <div class="card"></div>
+                    <div class="hand-label">Bottom</div>
+                </div>
             </div>
-        </div>
-        <div id="player-decks">
-            <div id="player-1">
-                <div class="card"></div>
-                <div class="card"></div>
-                <div class="card"></div>
-            </div>
-            <div id="player-2">
-                <div class="card"></div>
-                <div class="card"></div>
-                <div class="card"></div>
-                <div class="card"></div>
-                <div class="card"></div>
-            </div>
-            <div id="player-3">
-                <div class="card"></div>
-                <div class="card"></div>
-                <div class="card"></div>
-                <div class="card"></div>
-                <div class="card"></div>
+            <div id="action-cards">
+                <h2>Select your cards:</h2>
+                    <div class="card"></div>
+                    <div class="card"></div>
+                    <div class="card"></div>
+                    <div class="card"></div>
+                    <div class="card"></div>
             </div>
         </div>
 
