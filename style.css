@@ -34,6 +34,13 @@ button {
     height: 8em;
     width: 4em;
 }
+#action-card .img {
+    border: 1px solid black;
+    height: 8em;
+    width: 4em;
+    display: inline-block;
+    justify-content: center
+}
 .card, .hand-label {
     display: inline-block;
     justify-content: center;
