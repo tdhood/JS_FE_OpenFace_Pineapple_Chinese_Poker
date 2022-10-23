@@ -1,4 +1,3 @@
-#RULES
+# OPEN-FACE PINEAPPLE CHINESE POKER
 
-Each player is dealt 5 cards
-Each player plays one card at a time until all cards are played.
+## This is a fun card game project that I'm working on. It is build using HTML/CSS/JavaScript.
