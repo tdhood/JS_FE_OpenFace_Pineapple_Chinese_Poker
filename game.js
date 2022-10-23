@@ -2,21 +2,27 @@
 
 const BASE_URL = "https://www.deckofcardsapi.com/api/deck";
 const $drawPile = $("#draw-pile");
-let deckId = "";
+let globalDeckId = "";
 let $actionCards = $("#action-cards")
 let actionCards = {}
+let $targetCard;
 
 async function getDeck() {
+    /** makes call to deck of cards api to get deck Id */
   const deckData = await axios.get(`${BASE_URL}/new/shuffle/?deck_count=1`);
   console.log("deckData++++", deckData);
-  deckId = deckData.data.deck_id;
-  console.log("deckId++++++", deckId);
-//   $drawPile.append(deckData.)
+  globalDeckId = deckData.data.deck_id;
+  console.log("deckId++++++", globalDeckId);
 }
 
 async function drawStartingCards() {
-    let playerCardsResp = await axios.get(`${BASE_URL}/${deckId}/draw/?count=5`)
-    let compCardsResp = await axios.get(`${BASE_URL}/${deckId}/draw/?count=5`)
+    /** using the global deck id retrieved from getDeck(), makes api call to deck of cards api
+     * to get draw 5 cards for each player.
+     * 
+     * Then function calls placeStartingCards with the cards from request to append them to DOM
+     */
+    let playerCardsResp = await axios.get(`${BASE_URL}/${globalDeckId}/draw/?count=5`)
+    let compCardsResp = await axios.get(`${BASE_URL}/${globalDeckId}/draw/?count=5`)
     
     console.log("playerCards+++", playerCardsResp)
     actionCards["playerCards"]= playerCardsResp.data.cards
@@ -27,26 +33,46 @@ async function drawStartingCards() {
 }
 
 function placeStartingCards(actionCards) {
-
-    let $divsToRemove = $("#action-cards > div");
-    console.log('divCount++++', $divsToRemove.length)
-    $divsToRemove.remove()
+    /** Displays players cards */
+    $actionCards.css({"visibility": "visible"})
 
     for(let card of actionCards.playerCards) {
-        let $startingCard = $("<img>", {"class": 'card', src: card.image});
-        $actionCards.append($startingCard)
+        let $cardContainer = $('<div>', {"class" : "card"})
+        let $startingCard = $("<img>", {"id": card.code, "class": 'card-img', src: card.image});
+        $cardContainer.append($startingCard)
+        $actionCards.append($cardContainer)
     }
-
-    // let $cardImages = actionCards["playerCards"].map(x => ($('<div>'), {'class': 'card', src: x.image}))
-    // console.log('images?????', $cardImages)
     
+   // TODO: add card back image to draw pile
 }
 
 async function startGame(evt) {
+    /**Conductor function to start game */
     evt.preventDefault;
+    console.log('actioncards length check', $actionCards.length)
+
+    if ($actionCards.length > 0) {
+        $("#start").attr('disabled', true)
+    }
+
     await getDeck();
     await drawStartingCards();
-    
 }
 
+
+function selectCard(evt) {
+    evt.preventDefault;
+    console.log('selectCard')
+
+    $targetCard = evt.target;
+    console.log('targetCard', $targetCard)
+
+    ($targetCard).css()
+
+
+}
+
+$("#action-cards").on("click", selectCard);
 $("#start").on("click", startGame);
+
+

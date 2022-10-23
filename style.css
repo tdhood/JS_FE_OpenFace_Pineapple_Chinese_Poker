@@ -34,10 +34,14 @@ button {
     height: 8em;
     width: 4em;
 }
-#action-card .img {
+#action-cards {
+    visibility: hidden;
+}
+#action-cards .img {
     border: 1px solid black;
     height: 8em;
     width: 4em;
+    margin: 1em;
     display: inline-block;
     justify-content: center
 }
@@ -64,4 +68,13 @@ button {
     display: inline-block;
     margin: auto;
     padding: 0em 6em;
+}
+
+.card-img {
+    height: inherit;
+    width: inherit;
+}
+
+.card-img:hover {
+    padding-bottom: 2em;
 }
